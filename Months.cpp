@@ -24,6 +24,8 @@ bool isLeapYear(int y) {
 }
 int getDayOfTheWeek(int mm, int dd, int yy)
 {
+	//About to use a method found on the internet for calculating the day of the week
+	//for a given date, called the Key Value Method.
 	int monthtable[] = { 1,4,4,0,2,5,0,3,6,1,4,6 };
 	int centurytable[] = { 4,2,0,6 };
 	int lasttwodigits = (yy % 100);
