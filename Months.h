@@ -5,13 +5,14 @@
 #include <iostream>
 
 
-//bool isLeapYear(int);
+//This class is pretty anemic right now, as I have most of the functions
+//prototyped outside of it. I intend to fold them into the class, eventually.
 
 class Month {
 public:
 	void initializeMonth(int, int);
 	std::string getMonthName();
-	//friend bool isLeapYear(int);
+	
 private:
 	int number_of_days;
 	int numerical_representation;
