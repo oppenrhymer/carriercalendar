@@ -156,7 +156,7 @@ int Date::checkIfHoliday() {
 	int tempday = firstday.getDayOfTheWeek();
 	int count = 0;
 	int maxcount = count;
-	//int tempday = firstdayofmonth;
+	
 	if (month != 5)
 	{
 		for (int i = 1; i <= day; i++)
@@ -164,8 +164,7 @@ int Date::checkIfHoliday() {
 			if (dayofweek == tempday)
 			{
 				count++;
-				//troubleshooting...
-				//std::cout << "Day count: " << count << std::endl;
+				
 			}
 			if (tempday == 6)
 			{
@@ -348,38 +347,6 @@ void Period::setPeriod(Date& beg, Date& end)
 }
 void Period::printPeriod()
 {
-	/*ORIGINAL ITERATION. MATHY AND INCOMPLETE.
-	int ydiff = (ending.year - beginning.year);
-	int mdiff = (ending.month - beginning.month);
-	int ddiff = (ending.day - beginning.day);
-	int m = beginning.month;
-	int d = beginning.day;
-	int y = beginning.year;
-	
-	//WARNING, THIS IS JUST A BASIC, UNTREATED SERIES OF LOOPS.
-	//THE NUMBERS WILL NEED TO BE TREATED TO ACCOUNT FOR DIFFERENT MONTHS/YEARS
-	for (int j = 0; j < (ydiff + 1); j++)
-	{
-		Date tempdate(m,d,y);
-		for (int i = 0; i < (mdiff + 1); i++)
-		{
-
-			for (int k = 0; k < (ddiff + 1); k++)
-			{
-				//std::cout << "\nMonth: " << tempdate.month << std::endl;
-				tempdate.displayDate();
-				//std::cout << "\nMonth: " << tempdate.month << std::endl;
-				tempdate.day++;
-				//std::cout << "\nMonth: " << tempdate.month << std::endl;
-			}
-			tempdate.month++;
-
-		}
-		tempdate.year++;
-
-	}
-	*/
-	//SECOND ITERATION. USES OVERLOADED OPERATORS
 	Date tempdate;
 	tempdate = beginning;
 	while (!(tempdate == ending))
