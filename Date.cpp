@@ -660,61 +660,7 @@ std::list<Date> Period::printPeriod(unsigned int flags, std::string dayOffColor)
 		counter++;
 
 	}
-	//ORIGINAL
-	/*
-	while (!(tempdate == ending))
-	{
-		//I want to add a bool here (default: 'false') which will store the state of whether or not the date has been displayed.
-		//Each check, if true, will only print the type of check and turn the bool 'true'. 
-		//Then, at the end, will display date only once.
-		//
-		//**UPDATE** 10/7/2018
-		//Works, but, perhaps, not quite as intended. Will display all days off. Flag check just determines if a day meets any
-		//of the criteria, but will not discrimate between overlaps. Might have to add more bools here...
-
-		bool willBeDisplayed = false;
-		if (flags & OPTION1_FLAG)
-		{
-			if (tempdate.checkIfHoliday())
-			{
-				//std::cout << "-Holiday-";
-				willBeDisplayed = true;
-			}
-		}
-		if (flags & OPTION2_FLAG)
-		{
-			if (tempdate.isDayOff(dayOffColor))
-			{
-				//std::cout << "-Day Off-";
-				willBeDisplayed = true;
-			}
-		}
-		if (flags & OPTION3_FLAG)
-		{
-			
-			if (tempdate.isDayOff(dayOffColor) && tempdate.checkIfHoliday())
-			{
-				//std::cout << "-Potential Force-";
-				willBeDisplayed = true;
-			}
-		}
-		if (willBeDisplayed)
-		{
-			//std::cout << std::endl;
-			//tempdate.displayDate();
-			resultsList.push_back(tempdate);
-		}
-		if (beginning < ending)
-		{
-			tempdate++;
-		}
-		else {
-			tempdate--;
-		}
-		counter++;
-		
-
-	}*/
+	
 	return resultsList;
 }
 
@@ -725,13 +671,7 @@ int Period::numberOfSearchResults(unsigned int flags, std::string dayOffColor)
 	int counter = 0;
 	while (!(tempdate == ending))
 	{
-		//I want to add a bool here (default: 'false') which will store the state of whether or not the date has been displayed.
-		//Each check, if true, will only print the type of check and turn the bool 'true'. 
-		//Then, at the end, will display date only once.
-		//
-		//**UPDATE** 10/7/2018
-		//Works, but, perhaps, not quite as intended. Will display all days off. Flag check just determines if a day meets any
-		//of the criteria, but will not discrimate between overlaps. Might have to add more bools here...
+	
 
 		int flagsCode = checkFlags(flags, tempdate.getDayOfTheWeek());
 		bool willBeDisplayed = false;
@@ -783,57 +723,4 @@ int Period::numberOfSearchResults(unsigned int flags, std::string dayOffColor)
 		}
 	}
 	return counter;
-}
-void Period::newPrintPeriod(unsigned char flags, std::string dayOffColor)
-{
-	Date tempdate;
-	tempdate = beginning;
-	int counter = 0;
-	while (!(tempdate == ending))
-	{
-		//I want to add a bool here (default: 'false') which will store the state of whether or not the date has been displayed.
-		//Each check, if true, will only print the type of check and turn the bool 'true'. 
-		//Then, at the end, will display date only once.
-		//
-		//**UPDATE** 10/7/2018
-		//Works, but, perhaps, not quite as intended. Will display all days off. Flag check just determines if a day meets any
-		//of the criteria, but will not discrimate between overlaps. Might have to add more bools here...
-
-		bool willBeDisplayed = false;
-		if (flags & OPTION1_FLAG)
-		{
-			if (tempdate.checkIfHoliday())
-			{
-				std::cout << "-Holiday-";
-				willBeDisplayed = true;
-			}
-		}
-		if (flags & OPTION2_FLAG)
-		{
-			if (tempdate.isDayOff(dayOffColor))
-			{
-				std::cout << "-Day Off-";
-				willBeDisplayed = true;
-			}
-		}
-		if (flags & OPTION3_FLAG)
-		{
-
-			if (tempdate.isDayOff(dayOffColor) && tempdate.checkIfHoliday())
-			{
-				std::cout << "-Potential Force-";
-				willBeDisplayed = true;
-			}
-		}
-		if (willBeDisplayed)
-		{
-			std::cout << std::endl;
-			tempdate.displayDate();
-		}
-		tempdate++;
-		counter++;
-
-
-	}
-	return;
 }
