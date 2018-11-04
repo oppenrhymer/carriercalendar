@@ -57,36 +57,7 @@ int main(int argc, char* argv[])
 	//Date nextMonth(11, 1, 2018);
 	//newmenu.drawCalendar(currDate);
 	newmenu.mainLoop(testDate);
-	/*
-	while (1)
-	{
-		Date currDate(i, 1, j);
-		newmenu.drawCalendar(currDate);
-		std::cout << "\n\n1: Search | 2: Add Day | 3: Load Profile | 4: Save Dates | 5: Exit" << std::endl;
-		std::cin >> p;
-		if (p == 1)
-		{
-			i++;
-			if (i > 12)
-			{
-				i = 1;
-				j++;
-			}
-		}
-		if (p == -1)
-		{
-			i--;
-			if (i < 1)
-			{
-				i = 12;
-				j--;
-			}
-		}
-		std::cin.clear();
-		p = 0;
-
-	}
-	*/
+	
 	
 	/*
 	std::ifstream file("C:/Users/Ryan/Documents/Visual Studio 2015/Projects/USPSCalendar/USPSCalendar/SCHEDULE.INF");
@@ -97,77 +68,6 @@ int main(int argc, char* argv[])
 	}
 	*/
 
-	//TO BE USED WHEN HIGHLIGHTING SELECTED OPTIONS. 112 = BACKGROUND GRAY 7 = DEFAULT COLOR
-
-	HANDLE hConsole;
-
-	int k, menuchoice;
-	menuchoice = 0;
-	hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
-
-	/*k = 112;
-	SetConsoleTextAttribute(hConsole, k);
-	k = 7;
-	SetConsoleTextAttribute(hConsole, k);
-	*/
-	unsigned char searchflags = 0;
-	while (menuchoice != 10)
-	{
-		std::cout << "Search Criteria:\n";
-		std::cout << "****************\n";
-		if (searchflags & OPTION1_FLAG)
-		{
-			k = 112;
-			SetConsoleTextAttribute(hConsole, k);
-			std::cout << "1:";
-			k = 7;
-			SetConsoleTextAttribute(hConsole, k);
-			std::cout << " Holidays" << std::endl;
-		}
-		else {
-			std::cout << "1: Holidays" << std::endl;
-		}
-		if (searchflags & OPTION2_FLAG)
-		{
-			k = 112;
-			SetConsoleTextAttribute(hConsole, k);
-			std::cout << "2:";
-			k = 7;
-			SetConsoleTextAttribute(hConsole, k);
-			std::cout << " Days Off" << std::endl;
-		}
-		else {
-			std::cout << "2: Days Off" << std::endl;
-		}
-		if (searchflags & OPTION3_FLAG)
-		{
-			k = 112;
-			SetConsoleTextAttribute(hConsole, k);
-			std::cout << "3:";
-			k = 7;
-			SetConsoleTextAttribute(hConsole, k);
-			std::cout << " Potential Forces" << std::endl;
-		}
-		else {
-			std::cout << "3: Potential Forces" << std::endl;
-		}
-		std::cout << "****************\n\n";
-		std::cout << "To add or remove, type corresponding number. '10' to quit: ";
-		std::cin >> menuchoice;
-		if (menuchoice == 1)
-		{
-			searchflags ^= OPTION1_FLAG;
-		}
-		if (menuchoice == 2)
-		{
-			searchflags ^= OPTION2_FLAG;
-		}
-		if (menuchoice == 3)
-		{
-			searchflags ^= OPTION3_FLAG;
-		}
-		std::cout << "\n\n\n";
-	}
 
 
 
