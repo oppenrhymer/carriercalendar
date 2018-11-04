@@ -66,7 +66,6 @@ public:
 	//void printPeriod(unsigned char, std::string);
 	std::list<Date> printPeriod(unsigned int, std::string);
 	int numberOfSearchResults(unsigned int, std::string);
-	void newPrintPeriod(unsigned char, std::string);
 	Date getBeginning()
 	{
 		return beginning;
@@ -79,29 +78,6 @@ private:
 	Date beginning;
 	Date ending;
 };
-/*void Month::initializeMonth(int mm, int yy)
-{
-	numerical_representation = mm;
 
-	if (mm == 2)
-	{
-		if (isLeapYear(yy))
-		{
-			number_of_days = 29;
-		}
-		else {
-			number_of_days = 28;
-		}
-	}
-	if ((mm == 4) || (mm == 6) || (mm == 9) || (mm == 11))
-	{
-		number_of_days = 30;
-	}
-	else {
-		number_of_days = 31;
-	}
-	return;
-
-}*/
 
 #endif
